@@ -35,7 +35,16 @@ contact2.phone_number = "999-555-3333"
 contact2.company_id = amazon_id
 contact2.save
 
+tesla = Company.where({ name: "Tesla Inc." })[0]
+tesla_id = tesla.id
 
+values = { first_name: "Elon",
+            last_name: "Musk",
+            email: "elon.musk@tesla.com",
+            phone_number: "777-444-5555",
+            company_id: tesla_id }
+contact3 = Contact.new(values)
+contact3.save
 # 3. write code to display how many contacts are in the database AND each contact's info (name, email), e.g.:
 
 # ---------------------------------

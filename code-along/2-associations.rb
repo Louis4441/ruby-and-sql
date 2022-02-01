@@ -5,7 +5,6 @@
 
 # 1. Query all of the contacts at Apple Inc.
 apple = Company.where( {name: "Apple Inc." })[0]
-apple_id = apple.id
 
 # You can write this directly in the model company.rb to skip this step
 #       Contact.where({ company_id: apple_id })
