@@ -3,6 +3,28 @@
 # should be the top-level directory (i.e. /workspace/your-app/) and then run:
 # rails runner code-along/0-classes.rb
 
+# creating instances of the String class
+brians_favorite_food = "tacos"
+bens_favorite_food = "sushi"
+# methods part of the String class
+puts brians_favorite_food.upcase
+puts bens_favorite_food.upcase
+
 # String Class
+class Dog
+
+    def speak
+        puts "Woof"
+    end
+
+end
+
+jenkins = Dog.new
+
+jenkins.speak
+
+
+
+
 
 # String Methods
