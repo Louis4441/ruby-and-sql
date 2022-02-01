@@ -10,7 +10,7 @@ Company.destroy_all
 
 # 1a. check out the schema file
 # 1b. check out the model file
-puts "There were #{Company.all.count} companies in our db."
+#puts "There were #{Company.all.count} companies in our db."
 
 # 2. create new companies
 values = { name: "Apple Inc.", 
@@ -20,10 +20,37 @@ values = { name: "Apple Inc.",
 
 apple = Company.new(values)
 apple.save
+
+values = { name: "Amazon.com, Inc.", 
+            url: "https://amazon.com", 
+            city: "Seattle", 
+            state: "WA" }
+
+amazon = Company.new(values)
+amazon.save
 puts "There are now #{Company.all.count} companies in our db."
 
 # 3. query companies table
 
+california_company = Company.where({ state: "CA"})[0]
+puts california_company.inspect
+
 # 4. read column values from row
+puts california_company.read_attribute(:url)
+puts california_company.name
 
 # 5. update attribute value
+california_company.write_attribute(:slogan, "Think different.")
+california_company.slogan = "Tink different."
+california_company.save
+puts california_company.inspect
+
+new_company = Company.new
+new_company.name = "Tesla Inc."
+new_company.url = "https://tesla.com"
+new_company.city = "Palo Alto"
+new_company.state = "CA"
+new_company.save
+
+puts new_company.inspect
+puts "There are now #{Company.all.count} companies in our db."
