@@ -10,8 +10,17 @@ Company.destroy_all
 
 # 1a. check out the schema file
 # 1b. check out the model file
+puts "There were #{Company.all.count} companies in our db."
 
 # 2. create new companies
+values = { name: "Apple Inc.", 
+            url: "https://apple.com", 
+            city: "Cupertino", 
+            state: "CA" }
+
+apple = Company.new(values)
+apple.save
+puts "There are now #{Company.all.count} companies in our db."
 
 # 3. query companies table
 

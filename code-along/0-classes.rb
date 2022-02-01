@@ -24,7 +24,4 @@ jenkins = Dog.new
 jenkins.speak
 
 
-
-
-
 # String Methods
