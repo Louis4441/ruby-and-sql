@@ -20,28 +20,6 @@ for contact in Contact.all
 end
 
 # 2. similar to above, but this time organized by company, write code to display each company (name) and its contacts, e.g. below
-
-apple = Company.where( {name: "Apple Inc." })[0]
-puts "--"
-puts "#{apple.name}"
-for contact in apple.contacts
-    puts "#{contact.first_name} #{contact.last_name} - #{contact.email} "
-end
-
-amazon = Company.where( {name: "Amazon.com, Inc." })[0]
-puts "--"
-puts "#{amazon.name}"
-for contact in amazon.contacts
-    puts "#{contact.first_name} #{contact.last_name} - #{contact.email} "
-end
-
-tesla = Company.where( {name: "Tesla Inc." })[0]
-puts "--"
-puts "#{tesla.name}"
-for contact in tesla.contacts
-    puts "#{contact.first_name} #{contact.last_name} - #{contact.email} "
-end
-
 # ---------------------------------
 # Apple Inc.
 # Tim Cook - tim@apple.com
@@ -52,3 +30,11 @@ end
 #
 # Tesla, Inc.
 # Elon Musk - elon@tesla.com
+
+for company in Company.all
+    puts "--"
+    puts company.name
+    for contact in company.contacts
+        puts "#{contact.first_name} #{contact.last_name} - #{contact.email}"
+    end 
+end
