@@ -18,7 +18,7 @@ apple_id = apple.id
 values = { first_name: "John",
             last_name: "Smith",
             email: "john.smith@email.com",
-            phone_number: "8883335065",
+            phone_number: "888-333-5555",
             company_id: apple_id }
 contact1 = Contact.new(values)
 contact1.save
@@ -30,7 +30,7 @@ contact2 = Contact.new
 contact2.first_name = "Jane"
 contact2.last_name = "Doe"
 contact2.email = "jane.doe@email.com"
-contact2.phone_number = "9995553333" 
+contact2.phone_number = "999-555-3333" 
 #contact2 = Contact.new(values)
 contact2.company_id = amazon_id
 contact2.save
@@ -47,8 +47,9 @@ contact2.save
 
 puts "Contacts: #{Contact.all.count}"
 for contact in Contact.all
-    print "#{contact.read_attribute(:first_name)} #{contact.read_attribute(:last_name)} - #{contact.read_attribute(:email)}"
     company = Company.where({ id: contact.company_id })[0]
-    print " -- Company: #{company.name}\n"
+    print "#{company.name}: "
+    print "#{contact.first_name} #{contact.last_name} - #{contact.email}\n"
+    
 end
 
